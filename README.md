@@ -1,11 +1,11 @@
 # intro-groovy-gr8workshops
-An Introduction to Groovy for the May 2017 GR8Conf EU
+An Introduction to Groovy for the DevFest Berlin 2017
 
 No longer a niche, scripting language, Groovy now exists in small and large organizations across the globe from Berlin startups like Zenjob to Netflix and Google. Whether part of a Jenkins script, Gradle config, Grails application, or Spock test, you may already be using or at least are aware of the Groovy programming language.
 
 This introductory workshop aimed at experienced programmers new to groovy will highlight some basic syntax, explore basic scripting functionality, and finish with creating your first web application.
 
-Slides are published at [https://jlstrater.github.io/intro-groovy-workshop-gr8conf-eu-2017](https://jlstrater.github.io/intro-groovy-workshop-gr8conf-eu-2017/)
+Slides are published at [https://jlstrater.github.io/intro-groovy-workshop-devfest-berlin-2017](https://jlstrater.github.io/intro-groovy-workshop-devfest-berlin-2017/)
 
 # About the Slides
 
