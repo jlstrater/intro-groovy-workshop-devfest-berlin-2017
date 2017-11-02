@@ -1,7 +1,9 @@
 # intro-groovy-gr8workshops
 An Introduction to Groovy for the May 2017 GR8Conf EU
 
-In a world where productivity is paramount, Groovy rises to the challenge, making it one of the most popular alternate languages on the JVM. Groovy is a dynamic compiled programming language that promotes rapid development, has easy-to-learn syntax and has the ability to leverage existing Java libraries. It also takes features from dynamic languages like Ruby and Python, all while staying compatible with Java. This beginner-level session will explore syntax, basic scripting, APIs and more.
+No longer a niche, scripting language, Groovy now exists in small and large organizations across the globe from Berlin startups like Zenjob to Netflix and Google. Whether part of a Jenkins script, Gradle config, Grails application, or Spock test, you may already be using or at least are aware of the Groovy programming language.
+
+This introductory workshop aimed at experienced programmers new to groovy will highlight some basic syntax, explore basic scripting functionality, and finish with creating your first web application.
 
 Slides are published at [https://jlstrater.github.io/intro-groovy-workshop-gr8conf-eu-2017](https://jlstrater.github.io/intro-groovy-workshop-gr8conf-eu-2017/)
 

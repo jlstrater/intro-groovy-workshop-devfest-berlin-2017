@@ -10,7 +10,7 @@ html(class="no-js", ng-app="main")
   // <![endif]
   head
     meta(charset="utf-8")
-    title Introduction to Groovy
+    title Intro to the Groovy Language and Ecosystem
     meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
     meta(name="apple-mobile-web-app-capable", content="yes")
     meta(name="apple-mobile-web-app-status-bar-style", content="black-translucent")
@@ -21,13 +21,12 @@ html(class="no-js", ng-app="main")
     .reveal
       .slides
         section(data-state="index-slide")
-          h2 Introduction to Groovy
-          p <a href="http://twitter.com/codeJENNerator" target="_blank"><img style="border:none;margin:0px;box-shadow:none;" src="./assets/img/CompanyAndProductLogos/twitter.png"/>@codeJENNerator</a>
+          h2 Intro to the Groovy Language and Ecosystem
         section(data-state="github-slide", class="github-section")
           h1 <i class="fa fa-icon fa-github"></i>
           p Current
           p
-            a(href="https://github.com/jlstrater/intro-groovy-workshop-gr8conf-eu-2017",target="_blank") Slides(source)
+            a(href="https://github.com/jlstrater/intro-groovy-workshop-devfest-berlin-2017",target="_blank") Slides(source)
         section
           h2 About Me
         section
@@ -62,7 +61,7 @@ html(class="no-js", ng-app="main")
             li APIs
             li MetaProgramming
         section
-          img(src='./assets/img/groovy-logo.png', style="border:none;")
+          img(src='./assets/img/groovy-logo.png', style="border:none;box-shadow:none;")
           h2 Groovy
           ul
             li.fragment Dynamic, compiled language for the Java Virtual Machine(JVM).
@@ -74,10 +73,11 @@ html(class="no-js", ng-app="main")
               ul.ul-inline
                 li <img src='./assets/img/CompanyAndProductLogos/netflix.jpg' class='inline-img'/>
                 li <img src='./assets/img/CompanyAndProductLogos/linkedin.jpg' class='inline-img'/>
-                li <img src='./assets/img/CompanyAndProductLogos/target.png' class='inline-img'/>
                 li <img src='./assets/img/CompanyAndProductLogos/google.png' class='inline-img'/>
+                li <img src='./assets/img/CompanyAndProductLogos/mutualOfOmaha.jpg' class='inline-img'/>
                 li <img src='./assets/img/CompanyAndProductLogos/sky.jpeg' class='inline-img'/>
-          p.fragment source: http://www.groovy-lang.org
+                li <img src='./assets/img/CompanyAndProductLogos/wellsfargo.jpg' class='inline-img'/>
+          p source: http://www.groovy-lang.org
 
         section
           h2 Open Source
@@ -118,13 +118,13 @@ html(class="no-js", ng-app="main")
 
         section
           ul
-            li Download Locally
-            p <a href="http://groovy-lang.org/download.html" target="_blank">http://groovy-lang.org/download.html</a>
             li SDK Manager (formerly GVM)
               a(href="http://sdkman.io/") http://sdkman.io/
               pre.
                 <code>curl -s get.sdkman.io | bash</code>
                 <code>sdk install groovy</code>
+            li Download Locally
+              p <a href="http://groovy-lang.org/download.html" target="_blank">http://groovy-lang.org/download.html</a>
         section
           h2 Groovy Shell
           img(src="./assets/img/groovy-shell.png")
@@ -154,9 +154,9 @@ html(class="no-js", ng-app="main")
         section
           h2 Hello, World!
           pre.
-            <code>groovy>println "Hello, GR8Conf EU 2017!"
+            <code>groovy>println "Hello, DevFest Berlin 2017!"
 
-            Hello, GR8Conf EU 2017!
+            Hello, DevFest Berlin 2017!
             ===>null</code>
         section
           h2 Data Types
@@ -311,11 +311,11 @@ html(class="no-js", ng-app="main")
                 println "Hello, $name $year!"
               }
 
-              c.call('GR8Conf EU')
-              -> "Hello, GR8Conf EU 2017!"
+              c.call('DevFest Berlin')
+              -> "Hello, DevFest Berlin 2017!"
 
-              c('GR8Conf EU', 2018)
-              -> "Hello, GR8Conf EU 2018!"</code>
+              c('DevFest Berlin', 2018)
+              -> "Hello, DevFest Berlin 2018!"</code>
           section
             h2 Closure Scope
             table
@@ -510,14 +510,14 @@ html(class="no-js", ng-app="main")
               }</code>
           section
             pre.
-              <code>Person me = new Person(first: 'Jenn', last: 'Strater')
+              <code>Person me = new Person(first: 'Jane', last: 'Doe')
               println me.first
               println me.last
 
               -- add String company to class --
-              me.company = 'Object Partners'
+              me.company = 'Abc Inc'
               println me.properties
-              -> [class:class Person, first:Jenn, company:Object Partners, last:Strater]</code>
+              -> [class:class Person, first:Jane, company:Abc Inc, last:Doe]</code>
           section
             pre.
               <code>class Person {
@@ -529,15 +529,15 @@ html(class="no-js", ng-app="main")
                 }
               }
 
-              Person me = new Person(first: 'Jenn', last: 'Strater')
+              Person me = new Person(first: 'Jane', last: 'Doe')
               println me.fullName
-               -> 'Jenn Strater'</code>
+               -> 'Jane Doe'</code>
         section
           h2 Scripts
           p (save previous script as people.groovy)
           pre.
             <code>groovy people.groovy
-            -> Jenn Strater</code>
+            -> Jane Doe</code>
         section
           h2 Scripts
           pre.
@@ -558,11 +558,11 @@ html(class="no-js", ng-app="main")
             pre.
               <code>def myFile = new File('foo.txt')
               myFile.write 'Hello, \n'
-              myFile.append('GR8Conf EU!')</code>
+              myFile.append('DevFest Berlin!')</code>
             p foo.txt
             pre.
               <code>Hello,
-              GR8Conf EU!</code>
+              DevFest Berlin!</code>
         section
           h2 Reading Files
           pre.
@@ -573,7 +573,7 @@ html(class="no-js", ng-app="main")
             }
 
              -> Hi,
-             -> GR8Conf EU!</code>
+             -> DevFest Berlin!</code>
         section
           section
             h2 APIs
@@ -610,21 +610,6 @@ html(class="no-js", ng-app="main")
                   println it + '\n'
                 }
               }</code>
-        section
-          h2 Your first app
-          pre.
-            <code>sdk use gradle 4.0-rc-1</code>
-        section
-          h2 Your first app
-          pre.
-            <code>gradle init --type=groovy-application</code>
-        section
-          h2 Your first app
-          p (example in IntelliJ)
-          ul
-            li Main
-            li Spock Test
-            li Build, Test, and Run with Gradle
         section
           h2 MetaProgramming
           h4 Extending a class
@@ -664,6 +649,21 @@ html(class="no-js", ng-app="main")
             li Compile Static Annotation
             li Domain Specific Language (DSL)s
         section
+          h2 Your first app
+          pre.
+            <code>sdk use gradle 4.3</code>
+        section
+          h2 Your first app
+          pre.
+            <code>gradle init --type=groovy-application</code>
+        section
+          h2 Your first app
+          p (example in IntelliJ)
+          ul
+            li Main
+            li Spock Test
+            li Build, Test, and Run with Gradle
+        section
           h2 Conclusions
           ul Groovy
             li provides the benefits of the JVM platform
@@ -677,11 +677,6 @@ html(class="no-js", ng-app="main")
             li Practical Groovy <a href="https://pledbrook.github.io/practical-groovy-public/">Free e-book</a>
         section
           h3 Questions?
-          p <a href="http://twitter.com/codeJENNerator" target="_blank"><img style="border:none;margin:0px;box-shadow:none;" src="./assets/img/CompanyAndProductLogos/twitter.png"/>@codeJENNerator</a>
-          p jenn@gr8ladies.org
-        section
-          h3 Exercises
-          p <a href="https://github.com/jlstrater/intro-groovy-workshop-gr8conf-eu-2017/blob/master/worksheets/FileBasedExercises.pdf">Handout</a>
     script(src="./assets/js/app.js")
 
     // If the query includes 'print-pdf', use the PDF print sheet

@@ -13,7 +13,7 @@
   <!-- <![endif]-->
   <head>
     <meta charset="utf-8">
-    <title>Introduction to Groovy</title>
+    <title>Intro to the Groovy Language and Ecosystem</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -24,13 +24,12 @@
     <div class="reveal">
       <div class="slides">
         <section data-state="index-slide">
-          <h2>Introduction to Groovy</h2>
-          <p><a href="http://twitter.com/codeJENNerator" target="_blank"><img style="border:none;margin:0px;box-shadow:none;" src="./assets/img/CompanyAndProductLogos/twitter.png"/>@codeJENNerator</a></p>
+          <h2>Intro to the Groovy Language and Ecosystem</h2>
         </section>
         <section data-state="github-slide" class="github-section">
           <h1><i class="fa fa-icon fa-github"></i></h1>
           <p>Current</p>
-          <p><a href="https://github.com/jlstrater/intro-groovy-workshop-gr8conf-eu-2017" target="_blank">Slides(source)</a></p>
+          <p><a href="https://github.com/jlstrater/intro-groovy-workshop-devfest-berlin-2017" target="_blank">Slides(source)</a></p>
         </section>
         <section>
           <h2>About Me</h2>
@@ -73,7 +72,7 @@
             <li>MetaProgramming</li>
           </ul>
         </section>
-        <section><img src="./assets/img/groovy-logo.png" style="border:none;">
+        <section><img src="./assets/img/groovy-logo.png" style="border:none;box-shadow:none;">
           <h2>Groovy</h2>
           <ul>
             <li class="fragment">Dynamic, compiled language for the Java Virtual Machine(JVM).</li>
@@ -85,13 +84,14 @@
               <ul class="ul-inline">
                 <li><img src='./assets/img/CompanyAndProductLogos/netflix.jpg' class='inline-img'/></li>
                 <li><img src='./assets/img/CompanyAndProductLogos/linkedin.jpg' class='inline-img'/></li>
-                <li><img src='./assets/img/CompanyAndProductLogos/target.png' class='inline-img'/></li>
                 <li><img src='./assets/img/CompanyAndProductLogos/google.png' class='inline-img'/></li>
+                <li><img src='./assets/img/CompanyAndProductLogos/mutualOfOmaha.jpg' class='inline-img'/></li>
                 <li><img src='./assets/img/CompanyAndProductLogos/sky.jpeg' class='inline-img'/></li>
+                <li><img src='./assets/img/CompanyAndProductLogos/wellsfargo.jpg' class='inline-img'/></li>
               </ul>
             </li>
           </ul>
-          <p class="fragment">source: http://www.groovy-lang.org</p>
+          <p>source: http://www.groovy-lang.org</p>
         </section>
         <section>
           <h2>Open Source</h2><img src="./assets/img/apache_logo.png" style="border:none;background:none;box-shadow:none;">
@@ -135,11 +135,12 @@
         </section>
         <section>
           <ul>
-            <li>Download Locally</li>
-            <p><a href="http://groovy-lang.org/download.html" target="_blank">http://groovy-lang.org/download.html</a></p>
             <li>SDK Manager (formerly GVM)<a href="http://sdkman.io/">http://sdkman.io/</a>
               <pre><code>curl -s get.sdkman.io | bash</code>
 <code>sdk install groovy</code></pre>
+            </li>
+            <li>Download Locally
+              <p><a href="http://groovy-lang.org/download.html" target="_blank">http://groovy-lang.org/download.html</a></p>
             </li>
           </ul>
         </section>
@@ -171,9 +172,9 @@
         </section>
         <section>
           <h2>Hello, World!</h2>
-          <pre><code>groovy>println "Hello, GR8Conf EU 2017!"
+          <pre><code>groovy>println "Hello, DevFest Berlin 2017!"
 
-Hello, GR8Conf EU 2017!
+Hello, DevFest Berlin 2017!
 ===>null</code></pre>
         </section>
         <section>
@@ -345,11 +346,11 @@ println result
   println "Hello, $name $year!"
 }
 
-c.call('GR8Conf EU')
--> "Hello, GR8Conf EU 2017!"
+c.call('DevFest Berlin')
+-> "Hello, DevFest Berlin 2017!"
 
-c('GR8Conf EU', 2018)
--> "Hello, GR8Conf EU 2018!"</code></pre>
+c('DevFest Berlin', 2018)
+-> "Hello, DevFest Berlin 2018!"</code></pre>
           </section>
           <section>
             <h2>Closure Scope</h2>
@@ -557,14 +558,14 @@ m.any { it.value % 2 == 0 }
 }</code></pre>
           </section>
           <section>
-            <pre><code>Person me = new Person(first: 'Jenn', last: 'Strater')
+            <pre><code>Person me = new Person(first: 'Jane', last: 'Doe')
 println me.first
 println me.last
 
 -- add String company to class --
-me.company = 'Object Partners'
+me.company = 'Abc Inc'
 println me.properties
--> [class:class Person, first:Jenn, company:Object Partners, last:Strater]</code></pre>
+-> [class:class Person, first:Jane, company:Abc Inc, last:Doe]</code></pre>
           </section>
           <section>
             <pre><code>class Person {
@@ -576,16 +577,16 @@ println me.properties
   }
 }
 
-Person me = new Person(first: 'Jenn', last: 'Strater')
+Person me = new Person(first: 'Jane', last: 'Doe')
 println me.fullName
- -> 'Jenn Strater'</code></pre>
+ -> 'Jane Doe'</code></pre>
           </section>
         </section>
         <section>
           <h2>Scripts</h2>
           <p>(save previous script as people.groovy)</p>
           <pre><code>groovy people.groovy
--> Jenn Strater</code></pre>
+-> Jane Doe</code></pre>
         </section>
         <section>
           <h2>Scripts</h2>
@@ -606,10 +607,10 @@ def doubledValue(x) {
             <h2>Creating and Writing to Files</h2>
             <pre><code>def myFile = new File('foo.txt')
 myFile.write 'Hello, \n'
-myFile.append('GR8Conf EU!')</code></pre>
+myFile.append('DevFest Berlin!')</code></pre>
             <p>foo.txt</p>
             <pre><code>Hello,
-GR8Conf EU!</code></pre>
+DevFest Berlin!</code></pre>
           </section>
         </section>
         <section>
@@ -621,7 +622,7 @@ myFile.eachLine { line ->
 }
 
  -> Hi,
- -> GR8Conf EU!</code></pre>
+ -> DevFest Berlin!</code></pre>
         </section>
         <section>
           <section>
@@ -659,23 +660,6 @@ http.get(path: '/jokes/random/5', query: [exclude: 'explicit']) { resp, reader -
   }
 }</code></pre>
           </section>
-        </section>
-        <section>
-          <h2>Your first app</h2>
-          <pre><code>sdk use gradle 4.0-rc-1</code></pre>
-        </section>
-        <section>
-          <h2>Your first app</h2>
-          <pre><code>gradle init --type=groovy-application</code></pre>
-        </section>
-        <section>
-          <h2>Your first app</h2>
-          <p>(example in IntelliJ)</p>
-          <ul>
-            <li>Main</li>
-            <li>Spock Test</li>
-            <li>Build, Test, and Run with Gradle</li>
-          </ul>
         </section>
         <section>
           <h2>MetaProgramming</h2>
@@ -716,6 +700,23 @@ you."say You are awesome!"()</code></pre>
           </ul>
         </section>
         <section>
+          <h2>Your first app</h2>
+          <pre><code>sdk use gradle 4.3</code></pre>
+        </section>
+        <section>
+          <h2>Your first app</h2>
+          <pre><code>gradle init --type=groovy-application</code></pre>
+        </section>
+        <section>
+          <h2>Your first app</h2>
+          <p>(example in IntelliJ)</p>
+          <ul>
+            <li>Main</li>
+            <li>Spock Test</li>
+            <li>Build, Test, and Run with Gradle</li>
+          </ul>
+        </section>
+        <section>
           <h2>Conclusions</h2>
           <ul>Groovy
             <li>provides the benefits of the JVM platform</li>
@@ -733,12 +734,6 @@ you."say You are awesome!"()</code></pre>
         </section>
         <section>
           <h3>Questions?</h3>
-          <p><a href="http://twitter.com/codeJENNerator" target="_blank"><img style="border:none;margin:0px;box-shadow:none;" src="./assets/img/CompanyAndProductLogos/twitter.png"/>@codeJENNerator</a></p>
-          <p>jenn@gr8ladies.org</p>
-        </section>
-        <section>
-          <h3>Exercises</h3>
-          <p><a href="https://github.com/jlstrater/intro-groovy-workshop-gr8conf-eu-2017/blob/master/worksheets/FileBasedExercises.pdf">Handout</a></p>
         </section>
       </div>
     </div>
